@@ -21,6 +21,10 @@ Router.route('/highscores', function () {
   this.render('leaderboard', { });
 });
 
+Router.route('/guide', function () {
+  this.render('guide', { });
+});
+
 Router.onAfterAction(function() {
   if (Meteor.isClient) {
     Session.set('navMenuOpen', false);
