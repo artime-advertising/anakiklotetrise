@@ -1,0 +1,47 @@
+#welcome {
+  .header {
+    background: url('/images/dark-bg.jpg') repeat;
+    text-align: center;
+    min-height: 50vh;
+    position: relative;
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50vh;
+      background: url('/images/stripe.png') repeat-x bottom center;
+    }
+    @media (min-width: @screen-md-min) {
+      padding-bottom: 135px;
+    }
+  }
+
+  .instructions {
+    background: @darkBlue url(/images/blue-pattern.jpg) repeat;
+    min-height: 50vh;
+    text-align: center;
+    ul {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      list-style: none;
+      padding: 1em 0 0 0;
+      li {
+        margin-bottom: 0.5em;
+      }
+      li:last-child {
+        color: @green;
+        font-size: 1.4em;
+      }
+    }
+
+    @media (min-width: @screen-sm-min) {
+      ul {
+        font-size: 24px;
+      }
+    }
+  }
+
+}

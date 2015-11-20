@@ -1,0 +1,73 @@
+#menuToggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  &:focus, &:active {
+    background: none;
+    border: none;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    font-size: 36px;
+  }
+}
+
+#navMenu {
+  background: white;
+  bottom: 0;
+  display: none;
+  font-size: 24px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+
+  &.open {
+    display: block;
+  }
+
+  .profile {
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+    height: 113px;
+    padding: 1em 1em;
+  }
+  .avatar {
+    border-radius: 100px;
+    float: left;
+    margin-right: 1em;
+    width: 64px;
+  }
+
+  ul.profile-display {
+    font-size: 18px;
+    float: left;
+    li:first-child {
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    color: #333;
+    display: block;
+    padding: 0.5em 1.5em;
+    border-bottom: 1px solid #ccc;
+
+    &:focus, &:hover {
+      background: #eee;
+      text-decoration: none;
+
+    }
+  }
+
+}

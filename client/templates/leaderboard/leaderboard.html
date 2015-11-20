@@ -1,0 +1,37 @@
+<template name="leaderboard">
+  <div id="leaderboard" class="dark">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 hidden-xs">
+          <div class="profileInfo">
+            <img src="{{fbImage facebookId=entry.facebookId}}" alt="{{name}}"/>
+            <div class="profileName">
+              {{entry.name}}
+            </div>
+          </div>
+          <img src="/images/kadoi.png" alt="" class="kadoi">
+        </div>
+        <div class="col-sm-9">
+          <h2>High Scores</h2>
+
+          <table class="users">
+            {{# each entries}}
+              <tr>
+                <td class="image">
+                  <img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}">
+                </td>
+                <td class="name">
+                  {{name}}
+                </td>
+                <td class="score">
+                  {{score}}
+                </td>
+              </tr>
+            {{/each}}
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

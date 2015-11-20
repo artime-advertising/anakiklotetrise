@@ -1,0 +1,75 @@
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.nopadding-xs {
+  @media (max-width: @screen-xs-max) {
+    padding: 0;
+  }
+}
+
+@border-radius-base:        50px;
+@border-radius-large:       50px;
+@border-radius-small:       50px;
+
+@btn-font-weight: bold;
+
+.common {
+  background: @darkBlue url(/images/blue-pattern.jpg) repeat;
+}
+
+.dark {
+  color: @green;
+  h1, h2, h3, h4, h5, h6 {
+    color: @green;
+  }
+}
+
+.screen-wrapper {
+  background: @darkBlue;
+  min-height: 100vh;
+  position: relative;
+
+  #logo {
+    display: none;
+  }
+
+  @media (min-width: @screen-md-min) {
+    background: @darkBlue url(/images/blue-pattern.jpg) repeat;
+    .screen {
+      background: url(/images/black-screen.svg) center center no-repeat;
+      background-size: contain;
+      height: 550px;
+      left: 50%;
+      margin-left: -375px;
+      padding: 53px 20px;
+      position: absolute;
+      top: 100px;
+      width: 750px;
+    }
+    .kadoi {
+      position: relative;
+      top: 80px;
+      max-width: none;
+      width: 180px;
+    }
+    #logo {
+      display: block;
+      left: 50%;
+      margin-left: -210px;
+      position:absolute;
+      top: -95px;
+      width: 420px;
+      z-index: 99;
+    }
+  }
+}
+
+.profileInfo {
+  padding-top: 25px;
+  .profileName {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

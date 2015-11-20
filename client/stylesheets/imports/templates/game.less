@@ -1,0 +1,26 @@
+#game {
+  #tetrisoid {
+    .blockrain-score-holder {display: none;}
+
+    .blockrain-touch-left {left: 0;
+    &:after {font-family: FontAwesome; content: "";}}
+    .blockrain-touch-right {right: 0;
+    &:after {font-family: FontAwesome; content: "";}}
+    .blockrain-touch-drop {bottom: 0;
+    &:after {font-family: FontAwesome; content: "";}}
+    .blockrain-touch-rotate-left {left: 0;
+    &:after {font-family: FontAwesome; content: "";}}
+    .blockrain-touch-rotate-right {right: 0;
+    &:after {font-family: FontAwesome; content: "";}}
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .score-wrapper {
+      position: relative;
+      top: 25px;
+    }
+    .currentScore {
+      font-size: 28px;
+    }
+  }
+}

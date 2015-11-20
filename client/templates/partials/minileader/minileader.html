@@ -1,0 +1,19 @@
+<template name="minileader">
+  <div class="minileader">
+
+    <h4>High Score:</h4>
+
+    {{#each topUsers}}
+    <div class="user">
+      <img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}">
+      <div class="name">
+        {{name}}
+      </div>
+      <div class="score">
+        {{score}}
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+</template>

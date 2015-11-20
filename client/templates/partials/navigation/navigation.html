@@ -1,0 +1,37 @@
+<template name="navigation">
+<button id="menuToggle"><i class="fa fa-bars"></i></button>
+<div id="navMenu" class="{{#if navMenuOpen}}open{{/if}}">
+
+  {{# if currentUser }}
+  <div class="profile">
+    <img src="{{fbImage facebookId=entry.facebookId size='square'}}" alt="" class="avatar">
+    <ul class="profile-display">
+      <li>{{entry.name}}</li>
+      <li>High Score: {{entry.score}}</li>
+    </ul>
+  </div>
+  {{/if}}
+
+  <ul>
+    <li>
+      {{#linkTo route='welcome'}}<i class="fa fa-home"></i> Αρχική{{/linkTo}}
+    </li>
+
+    {{# if currentUser }}
+      <li>
+        {{#linkTo route='entry'}}<i class="fa fa-user"></i> Τα στοιχεία μου{{/linkTo}}
+      </li>
+      <li>
+        {{#linkTo route='game'}}<i class="fa fa-user"></i> Παιχνίδι{{/linkTo}}
+      </li>
+    {{/if}}
+
+    <li>
+      {{#linkTo route='highscores'}}<i class="fa fa-star"></i> Βαθμολογία{{/linkTo}}
+    </li>
+    <li>
+      <a href=""><i class="fa fa-home"></i> Οδηγίες</a>
+    </li>
+  </ul>
+</div>
+</template>

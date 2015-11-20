@@ -1,0 +1,38 @@
+<template name="entry">
+<div id="entry" class="dark">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Γράψε τα στοιχεία σου:</h2>
+        {{#autoForm schema=Schemas.userProfile id="entryForm" type="normal"}}
+          <div class="row">
+            <div class="col-sm-4">
+                {{>afQuickField name="fullName" value=entry.name}}
+            </div>
+            <div class="col-sm-4">
+              {{>afQuickField name="email" value=entry.email}}
+            </div>
+            <div class="col-sm-4">
+              {{>afQuickField name="telephone" value=entry.telephone placeholder="πχ 6911123456"}}
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                {{>afQuickField name="address" value=entry.address}}
+              </div>
+              <div class="col-sm-6">
+                <div class="checkbox">
+                  {{>afQuickField name="acceptTerms" value=entry.acceptTerms}}
+                </div>
+              </div>
+              <div class="col-sm-6 text-right">
+                <input type="submit" value="Αποστολή" class="btn btn-primary btn-lg hidden-xs">
+                <input type="submit" value="Αποστολή" class="btn btn-primary btn-lg btn-block visible-xs">
+              </div>
+            </div>
+          </div>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</div>
+</template>
