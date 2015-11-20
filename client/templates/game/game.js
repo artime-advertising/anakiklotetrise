@@ -45,6 +45,11 @@ Template.game.onRendered(function(){
       if (score > playerScore) {
         Entries.update(entry._id, {$set: {'score': score}})
       }
+      FB.ui({
+        method: 'feed',
+        link: 'http://anakiklotetrise.herrco.gr',
+        caption: 'Ανακυκλωτετρισα με σκορ ' + score + '! Παιξε το παιχνιδι, ανακυκλωσε οσες περισσοτερες συσκευασιες μπορεις, παρε μερος στο διαγωνισμο και... κερδισε ένα iPhone 6!',
+      }, function(response){});
     },
     onLine: function(lines, scoreIncrement, score) {
       self.currentScore.set(score);

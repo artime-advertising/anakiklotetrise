@@ -1,0 +1,23 @@
+.socialBar {
+  margin: 2em;
+  @media (min-width: @screen-sm-min) {
+    padding-left: 15%;
+  }
+}
+
+.screen-wrapper .socialBar {
+  display: none;
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 600px;
+  padding-left: 105px;
+  @media (min-width: @screen-sm-min) {
+    display: block;
+  }
+  @media (min-width: @screen-md-min) {
+    top: 700px;
+  }
+}
