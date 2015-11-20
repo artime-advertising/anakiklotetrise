@@ -11,25 +11,25 @@
           </div>
           <img src="/images/kadoi.png" alt="" class="kadoi">
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-8 col-sm-offset-1">
           <h2>High Scores</h2>
-
-          <table class="users">
-            {{# each entries}}
-              <tr>
-                <td class="image">
-                  <img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}">
-                </td>
-                <td class="name">
-                  {{name}}
-                </td>
-                <td class="score">
-                  {{score}}
-                </td>
-              </tr>
-            {{/each}}
-          </table>
-
+          <div class="leaderboard-wrapper">
+            <table class="users">
+              {{# each entries}}
+                <tr>
+                  <td class="image">
+                    <img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}">
+                  </td>
+                  <td class="name">
+                    {{name}}
+                  </td>
+                  <td class="score">
+                    {{score}}
+                  </td>
+                </tr>
+              {{/each}}
+            </table>
+          </div>
         </div>
       </div>
     </div>

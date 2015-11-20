@@ -1,3 +1,7 @@
+html, body {
+  background: @darkBlue url(/images/blue-pattern.jpg) repeat;
+}
+
 img {
   display: inline-block;
   max-width: 100%;
@@ -27,7 +31,7 @@ img {
 }
 
 .screen-wrapper {
-  background: @darkBlue;
+  background: @darkBlue url(/images/blue-pattern.jpg) repeat;
   min-height: 100vh;
   position: relative;
 
@@ -36,7 +40,6 @@ img {
   }
 
   @media (min-width: @screen-md-min) {
-    background: @darkBlue url(/images/blue-pattern.jpg) repeat;
     .screen {
       background: url(/images/black-screen.svg) center center no-repeat;
       background-size: contain;

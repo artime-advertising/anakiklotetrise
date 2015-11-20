@@ -1,4 +1,13 @@
 #leaderboard {
+  .leaderboard-wrapper {
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+    @media (min-width: @screen-sm-min) {
+      height: 370px;
+      overflow: auto;
+    }
+  }
   table.users {
     .name {
       padding: 0 10px;

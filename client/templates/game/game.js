@@ -1,5 +1,6 @@
 Template.game.onCreated(function() {
   this.currentScore = new ReactiveVar(0);
+  this.gameOver = new ReactiveVar(false);
 });
 
 Template.game.onRendered(function(){
@@ -29,6 +30,7 @@ Template.game.onRendered(function(){
     },
 
     onStart: function(){
+      self.gameOver.set(false);
       this.blockrain('controls', true);
       this.find('.blockrain-score-holder').remove();
       var md = new MobileDetect(window.navigator.userAgent);
@@ -38,13 +40,21 @@ Template.game.onRendered(function(){
       self.currentScore.set(0);
     },
     onRestart: function(){
+      self.gameOver.set(false);
       self.currentScore.set(0);
     },
     onGameOver: function(score){
+      self.gameOver.set(true);
+
       var playerScore = entry.score;
       if (score > playerScore) {
         Entries.update(entry._id, {$set: {'score': score}})
       }
+      FB.ui({
+        method: 'feed',
+        link: 'http://anakiklotetrise.herrco.gr',
+        caption: 'Ανακυκλωτετρισα με σκορ ' + score + '! Παιξε το παιχνιδι, ανακυκλωσε οσες περισσοτερες συσκευασιες μπορεις, παρε μερος στο διαγωνισμο και... κερδισε ένα iPhone 6!',
+      }, function(response){});
     },
     onLine: function(lines, scoreIncrement, score) {
       self.currentScore.set(score);
@@ -55,5 +65,8 @@ Template.game.onRendered(function(){
 Template.game.helpers({
   currentScore: function() {
     return Template.instance().currentScore.get();
+  },
+  gameOver: function() {
+    return Template.instance().gameOver.get();
   }
 });
