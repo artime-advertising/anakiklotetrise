@@ -3,17 +3,15 @@
 
     <h4>High Score:</h4>
 
+    <table>
     {{#each topUsers}}
-    <div class="user">
-      <img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}">
-      <div class="name">
-        {{name}}
-      </div>
-      <div class="score">
-        {{score}}
-      </div>
-    </div>
+      <tr>
+        <td><img src="{{fbImage facebookId=facebookId size='square'}}" alt="{{name}}"></td>
+        <td class="name">{{name}}</td>
+        <td class="score">{{score}}</td>
+      </tr>
     {{/each}}
+    </table>
 
   </div>
 </template>
