@@ -32,7 +32,7 @@ Router.onAfterAction(function() {
 })
 
 var authenticate = function() {
-  if (!Meteor.user()) {
+  if (!Meteor.isServer && !Meteor.user()) {
     this.redirect('/');
   } else {
     this.next();
