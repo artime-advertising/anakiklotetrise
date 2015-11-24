@@ -9,3 +9,9 @@ Template.gameOverMessage.helpers({
     ]);
   }
 })
+
+Template.gameOverMessage.events({
+  'click': function() {
+    $('#tetrisoid').blockrain('restart')
+  }
+});
